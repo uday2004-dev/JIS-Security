@@ -473,77 +473,288 @@
 
 
 
+// import { Link } from "react-router-dom";
+// import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+
+// const quickLinks = [
+//   ["Home", "/"],
+//   ["About Us", "/about"],
+//   ["Services", "/services"],
+//   ["Industries", "/industries"],
+//   ["Certifications", "/certifications"],
+//   ["Gallery", "/gallery"],
+//   ["Blog", "/blog"],
+//   ["Contact", "/contact"],
+// ];
+
+// const services = [
+//   "House Keeping Services",
+//   "Office Boy Supplies",
+//   "Warehouse Picker",
+//   "Front Office Assistant",
+//   "Supervisor Supplies",
+//   "Executives Recruitment",
+//   "Security Guard Service",
+//   "House Maid Service",
+// ];
+
+// const expertise = [
+//   "House Keeping Services",
+//   "Facility Management",
+//   "Office Cleaning",
+//   "Security Services",
+//   "Manpower Supply",
+//   "Contract Staffing",
+//   "Industrial Cleaning",
+//   "Corporate Services",
+//   "Recruitment Solutions",
+//   "Facility Outsourcing",
+//   "Permanent Staffing",
+//   "Support Services",
+// ];
+
+// const Footer = () => {
+//   return (
+//     <footer className="bg-[#172333] text-slate-300">
+//       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10 lg:py-16">
+//         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+//           {/* Company information */}
+//           <div>
+//             <Link to="/" className="inline-block">
+//               <span className="block text-2xl font-extrabold text-white">
+//                 JIS
+//               </span>
+//               <span className="mt-1 block text-[10px] font-bold uppercase tracking-[0.2em] text-amber-400">
+//                 Security & Staffing
+//               </span>
+//             </Link>
+
+//             <p className="mt-5 text-sm leading-7 text-slate-400">
+//               JIS offers facility management, housekeeping and staffing
+//               services focused on professional support and client
+//               requirements.
+//             </p>
+
+//             <Link
+//               to="/contact"
+//               className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-400 transition hover:text-white"
+//             >
+//               Contact Our Team <ArrowUpRight size={16} />
+//             </Link>
+//           </div>
+
+//           {/* Quick links */}
+//           <div>
+//             <h3 className="text-lg font-bold text-white">Quick Links</h3>
+//             <div className="mb-5 mt-3 h-1 w-10 bg-amber-400" />
+
+//             <ul className="space-y-3">
+//               {quickLinks.map(([label, href]) => (
+//                 <li key={label}>
+//                   <Link
+//                     to={href}
+//                     className="group flex items-center gap-2 text-sm transition hover:text-amber-400"
+//                   >
+//                     <span className="text-amber-400 transition group-hover:translate-x-1">
+//                       ›
+//                     </span>
+//                     {label}
+//                   </Link>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           {/* Services */}
+//           <div>
+//             <h3 className="text-lg font-bold text-white">Our Services</h3>
+//             <div className="mb-5 mt-3 h-1 w-10 bg-amber-400" />
+
+//             <ul className="space-y-3">
+//               {services.map((service) => (
+//                 <li key={service}>
+//                   <Link
+//                     to="/services"
+//                     className="group flex items-start gap-2 text-sm leading-6 transition hover:text-amber-400"
+//                   >
+//                     <span className="text-amber-400">›</span>
+//                     {service}
+//                   </Link>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           {/* Contact */}
+//           <div>
+//             <h3 className="text-lg font-bold text-white">Contact</h3>
+//             <div className="mb-5 mt-3 h-1 w-10 bg-amber-400" />
+
+//             <div className="space-y-5">
+//               <div className="flex items-start gap-3">
+//                 <Phone size={18} className="mt-1 shrink-0 text-amber-400" />
+//                 <div>
+//                   <p className="text-xs font-bold uppercase tracking-wider text-white">
+//                     Phone
+//                   </p>
+//                   <a
+//                     href="tel:+919716380301"
+//                     className="mt-2 block text-sm leading-6 text-slate-400 hover:text-amber-400"
+//                   >
+//                     +91 870 010 4667
+//                   </a>
+//                   <a
+//                     href="tel:+919217305046"
+//                     className="block text-sm leading-6 text-slate-400 hover:text-amber-400"
+//                   >
+//                     +91 88001 74283
+//                   </a>
+//                 </div>
+//               </div>
+
+//               <div className="flex items-start gap-3">
+//                 <Mail size={18} className="mt-1 shrink-0 text-amber-400" />
+//                 <div className="min-w-0">
+//                   <p className="text-xs font-bold uppercase tracking-wider text-white">
+//                     Email
+//                   </p>
+//                   <a
+//                     href="mailto:yogendrakumar@ptpgs.in"
+//                     className="mt-2 block break-all text-sm leading-6 text-slate-400 hover:text-amber-400"
+//                   >
+//                     jaiprakash02800@gmail.com
+//                   </a>
+//                 </div>
+//               </div>
+
+//               <div className="flex items-start gap-3">
+//                 <MapPin size={18} className="mt-1 shrink-0 text-amber-400" />
+//                 <div>
+//                   <p className="text-xs font-bold uppercase tracking-wider text-white">
+//                     Location
+//                   </p>
+//                   <p className="mt-2 text-sm leading-7 text-slate-400">
+//                     H-8 G/F, Khata No. 51/21,
+//                     Jai Vihar Phase-1, Najafgarh,
+//                     New Delhi, Delhi - 110043
+//                   </p>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Areas of expertise */}
+//         <div className="mt-12 border-t border-white/10 pt-8">
+//           <h3 className="text-lg font-bold text-white">
+//             Areas of Expertise
+//           </h3>
+//           <div className="mb-6 mt-3 h-1 w-10 bg-amber-400" />
+
+//           <div className="grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+//             {expertise.map((item) => (
+//               <div key={item} className="flex items-center gap-3 text-sm">
+//                 <span className="text-amber-400">✓</span>
+//                 <span>{item}</span>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Copyright */}
+//       <div className="border-t border-white/10 bg-[#111b28]">
+//         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-5 text-center text-xs text-slate-400 sm:px-8 md:flex-row lg:px-10">
+//           <p>
+//             © {new Date().getFullYear()} P.T.P.G.S. All Rights Reserved.
+//           </p>
+//           <Link to="/contact" className="hover:text-amber-400">
+//             Contact Us
+//           </Link>
+//         </div>
+//       </div>
+//     </footer>
+//   );
+// };
+
+// export default Footer;
+
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUpRight, ShieldCheck } from "lucide-react";
 
 const quickLinks = [
   ["Home", "/"],
   ["About Us", "/about"],
-  ["Services", "/services"],
-  ["Industries", "/industries"],
+  ["Security Services", "/services"],
   ["Certifications", "/certifications"],
-  ["Gallery", "/gallery"],
-  ["Blog", "/blog"],
-  ["Contact", "/contact"],
+  ["Contact Us", "/contact"],
 ];
 
 const services = [
-  "House Keeping Services",
-  "Office Boy Supplies",
-  "Warehouse Picker",
-  "Front Office Assistant",
-  "Supervisor Supplies",
-  "Executives Recruitment",
-  "Security Guard Service",
-  "House Maid Service",
+  "Security Guard Services",
+  "Armed Security Services",
+  "Unarmed Security Guards",
+  "Corporate Security",
+  "Industrial Site Security",
+  "Residential Security",
+  "Event Security",
+  "Security Supervisors",
 ];
 
 const expertise = [
-  "House Keeping Services",
-  "Facility Management",
-  "Office Cleaning",
-  "Security Services",
-  "Manpower Supply",
-  "Contract Staffing",
-  "Industrial Cleaning",
-  "Corporate Services",
-  "Recruitment Solutions",
-  "Facility Outsourcing",
-  "Permanent Staffing",
-  "Support Services",
+  "Manned Guarding",
+  "Corporate Security",
+  "Industrial Security",
+  "Residential Protection",
+  "Access Control",
+  "Visitor Management",
+  "Security Supervision",
+  "Site Security",
+  "Patrolling Services",
+  "Premises Monitoring",
+  "Safety & Security Checks",
+  "Security Personnel Deployment",
 ];
 
 const Footer = () => {
   return (
-    <footer className="bg-[#172333] text-slate-300">
+    <footer className="bg-[#111827] text-slate-300">
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10 lg:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          {/* Company information */}
+
+          {/* Company Information */}
           <div>
-            <Link to="/" className="inline-block">
-              <span className="block text-2xl font-extrabold text-white">
-                P.T.P.G.S
+            <Link to="/" className="inline-flex items-center gap-3">
+              <span className="grid h-12 w-12 place-items-center rounded-xl bg-amber-400 text-[#111827]">
+                <ShieldCheck size={27} />
               </span>
-              <span className="mt-1 block text-[10px] font-bold uppercase tracking-[0.2em] text-amber-400">
-                Security & Staffing
+
+              <span>
+                <span className="block text-2xl font-extrabold text-white">
+                  JIS
+                </span>
+                <span className="mt-1 block text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">
+                  Security Services
+                </span>
               </span>
             </Link>
 
             <p className="mt-5 text-sm leading-7 text-slate-400">
-              P.T.P.G.S offers facility management, housekeeping and staffing
-              services focused on professional support and client
-              requirements.
+              JIS provides professional security services focused on
+              personnel protection, premises security, access control
+              and dependable on-site security support.
             </p>
 
             <Link
               to="/contact"
               className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-400 transition hover:text-white"
             >
-              Contact Our Team <ArrowUpRight size={16} />
+              Request Security Services
+              <ArrowUpRight size={16} />
             </Link>
           </div>
 
-          {/* Quick links */}
+          {/* Quick Links */}
           <div>
             <h3 className="text-lg font-bold text-white">Quick Links</h3>
             <div className="mb-5 mt-3 h-1 w-10 bg-amber-400" />
@@ -565,9 +776,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Security Services */}
           <div>
-            <h3 className="text-lg font-bold text-white">Our Services</h3>
+            <h3 className="text-lg font-bold text-white">
+              Security Services
+            </h3>
             <div className="mb-5 mt-3 h-1 w-10 bg-amber-400" />
 
             <ul className="space-y-3">
@@ -585,75 +798,100 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact Details */}
           <div>
-            <h3 className="text-lg font-bold text-white">Contact</h3>
+            <h3 className="text-lg font-bold text-white">Contact Us</h3>
             <div className="mb-5 mt-3 h-1 w-10 bg-amber-400" />
 
             <div className="space-y-5">
+
+              {/* Phone */}
               <div className="flex items-start gap-3">
-                <Phone size={18} className="mt-1 shrink-0 text-amber-400" />
+                <Phone
+                  size={18}
+                  className="mt-1 shrink-0 text-amber-400"
+                />
+
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-white">
-                    Phone
+                    Call Us
                   </p>
+
                   <a
-                    href="tel:+919716380301"
-                    className="mt-2 block text-sm leading-6 text-slate-400 hover:text-amber-400"
+                    href="tel:+918700104667"
+                    className="mt-2 block text-sm leading-6 text-slate-400 transition hover:text-amber-400"
                   >
-                    +91-9716380301
+                    +91 870 010 4667
                   </a>
+
                   <a
-                    href="tel:+919217305046"
-                    className="block text-sm leading-6 text-slate-400 hover:text-amber-400"
+                    href="tel:+918800174283"
+                    className="block text-sm leading-6 text-slate-400 transition hover:text-amber-400"
                   >
-                    +91-9217305046
+                    +91 88001 74283
                   </a>
                 </div>
               </div>
 
+              {/* Email */}
               <div className="flex items-start gap-3">
-                <Mail size={18} className="mt-1 shrink-0 text-amber-400" />
+                <Mail
+                  size={18}
+                  className="mt-1 shrink-0 text-amber-400"
+                />
+
                 <div className="min-w-0">
                   <p className="text-xs font-bold uppercase tracking-wider text-white">
-                    Email
+                    Email Us
                   </p>
+
                   <a
-                    href="mailto:yogendrakumar@ptpgs.in"
-                    className="mt-2 block break-all text-sm leading-6 text-slate-400 hover:text-amber-400"
+                    href="mailto:jaiprakash02800@gmail.com"
+                    className="mt-2 block break-all text-sm leading-6 text-slate-400 transition hover:text-amber-400"
                   >
-                    yogendrakumar@ptpgs.in
+                    jaiprakash02800@gmail.com
                   </a>
                 </div>
               </div>
 
+              {/* Address */}
               <div className="flex items-start gap-3">
-                <MapPin size={18} className="mt-1 shrink-0 text-amber-400" />
+                <MapPin
+                  size={18}
+                  className="mt-1 shrink-0 text-amber-400"
+                />
+
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-white">
-                    Location
+                    Office Address
                   </p>
+
                   <p className="mt-2 text-sm leading-7 text-slate-400">
-                    Near Bani Camp, 25 Foota Road, Jai Vihar, South West
-                    Delhi - 110043
+                    H-8 G/F, Khata No. 51/21,
+                    Jai Vihar Phase-1, Najafgarh,
+                    New Delhi, Delhi - 110043
                   </p>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
 
-        {/* Areas of expertise */}
+        {/* Areas of Expertise */}
         <div className="mt-12 border-t border-white/10 pt-8">
           <h3 className="text-lg font-bold text-white">
-            Areas of Expertise
+            Our Security Expertise
           </h3>
           <div className="mb-6 mt-3 h-1 w-10 bg-amber-400" />
 
           <div className="grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
             {expertise.map((item) => (
               <div key={item} className="flex items-center gap-3 text-sm">
-                <span className="text-amber-400">✓</span>
+                <ShieldCheck
+                  size={15}
+                  className="shrink-0 text-amber-400"
+                />
                 <span>{item}</span>
               </div>
             ))}
@@ -662,12 +900,16 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-white/10 bg-[#111b28]">
+      <div className="border-t border-white/10 bg-[#0b1220]">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-5 text-center text-xs text-slate-400 sm:px-8 md:flex-row lg:px-10">
           <p>
             © {new Date().getFullYear()} P.T.P.G.S. All Rights Reserved.
           </p>
-          <Link to="/contact" className="hover:text-amber-400">
+
+          <Link
+            to="/contact"
+            className="transition hover:text-amber-400"
+          >
             Contact Us
           </Link>
         </div>
