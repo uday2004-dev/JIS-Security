@@ -871,11 +871,17 @@ function CertificationsQuoteSection() {
     setStatus({ type: "", text: "" });
 
     try {
-      const res = await fetch("http://localhost:3000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      // const res = await fetch("http://localhost:3000/api/contact", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify(payload),
+      // });
+
+      const res = await fetch("https://jis-security.onrender.com/api/contact", {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify(payload),
+});
 
       if (!res.ok) throw new Error("Request failed");
 

@@ -952,6 +952,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import CertificateOnInc from "../assets/Certificate_of_Incorporation_JIS.jpg"
 import intimationLetter from "../assets/intimationLetter.jpg"
+// import axios from "axios";
 import PAN from "../assets/PAN_JIS.jpg"
 import TAN from "../assets/TAN_JIS.jpg"
 import Form34 from "../assets/Form_No_INC-34.pdf"

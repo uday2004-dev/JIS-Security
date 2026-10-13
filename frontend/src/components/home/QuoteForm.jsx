@@ -191,9 +191,9 @@ const QuoteForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/contact",
-        formData
-      );
+  "https://jis-security.onrender.com/api/contact",
+  formData
+);
 
       setStatus(
         response.data.message || "Your message has been sent successfully!"
