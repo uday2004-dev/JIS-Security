@@ -709,6 +709,13 @@
 // }
 
 import { useState } from "react";
+
+import CertificateOnInc from "../assets/Certificate_of_Incorporation_JIS.jpg"
+import intimationLetter from "../assets/intimationLetter.jpg"
+import PAN from "../assets/PAN_JIS.jpg"
+import TAN from "../assets/TAN_JIS.jpg"
+import Form34 from "../assets/Form_No_INC-34.pdf"
+import memo from "../assets/e-memo.pdf"
 import {
   ArrowRight,
   BadgeCheck,
@@ -749,77 +756,137 @@ const PAGE_IMAGES = {
    CERTIFICATES
 ========================================================= */
 
+// const certifications = [
+//   {
+//     image: `${ASSETS}/cert_udyam.png`,
+//     authority: "Govt. of India • MSME",
+//     badge: "Active & Verified",
+//     title: "Udyam Registration Certificate",
+//     description:
+//       "Issued by the Ministry of Micro, Small & Medium Enterprises, Government of India, recognising PTPGS India Private Limited.",
+//     tags: ["MSME Certified", "Enterprise Verification"],
+//   },
+
+//   {
+//     image: `${ASSETS}/cert_gst.png`,
+//     authority: "Govt. of India • GST",
+//     badge: "Tax Compliant",
+//     title: "GST Registration (Form GST REG-06)",
+//     description:
+//       "Statutory GST registration confirming the company's registration under the applicable Goods and Services Tax framework.",
+//     tags: ["GST REG-06", "Tax Compliance"],
+//   },
+
+//   {
+//     image: `${ASSETS}/cert_incorporation.png`,
+//     authority: "Ministry of Corporate Affairs",
+//     badge: "Incorporated Entity",
+//     title: "Certificate of Incorporation",
+//     description:
+//       "Official incorporation certificate for PTPGS India Private Limited under the Companies Act, 2013.",
+//     tags: ["Companies Act 2013", "Corporate Registration"],
+//   },
+
+//   {
+//     image: `${ASSETS}/cert_startupindia.png`,
+//     authority: "DPIIT • Govt. of India",
+//     badge: "Startup India",
+//     title: "#StartupIndia Recognition Certificate",
+//     description:
+//       "Recognition by the Department for Promotion of Industry and Internal Trade, Government of India.",
+//     tags: ["DPIIT Recognition", "Government Recognition"],
+//   },
+
+//   {
+//     image: `${ASSETS}/cert_army.png`,
+//     authority: "Indian Army • Defence Experience",
+//     badge: "28 Years Service",
+//     title: "Security Training & Service Certificate",
+//     description:
+//       "Certificate documenting the director's Indian Army service and relevant security, personnel management and operational experience.",
+//     tags: ["Defence Experience", "Security Training"],
+//   },
+
+//   {
+//     image: `${ASSETS}/cert_psara.png`,
+//     authority: "Controlling Authority Haryana • PSARA 2005",
+//     badge: "PSARA Compliant",
+//     title: "Security Training Institute MoU",
+//     description:
+//       "Memorandum of Understanding with Eagle Pledge Security Training Institute for prescribed security guard training requirements.",
+//     tags: ["160 Hrs Training", "PSARA 2005"],
+//   },
+
+//   {
+//     image: `${ASSETS}/cert_ncvet.png`,
+//     authority: "Govt. of India • NCVET & MEPSC",
+//     badge: "Grade A Qualified",
+//     title: "Upskilling Certification (Security Supervisor)",
+//     description:
+//       "Professional upskilling certification for security supervisor duties at NSQF Level 4.",
+//     tags: ["NSQF Level 4", "Supervisor Training"],
+//   },
+// ];
+
+
+
 const certifications = [
   {
-    image: `${ASSETS}/cert_udyam.png`,
-    authority: "Govt. of India • MSME",
-    badge: "Active & Verified",
-    title: "Udyam Registration Certificate",
-    description:
-      "Issued by the Ministry of Micro, Small & Medium Enterprises, Government of India, recognising PTPGS India Private Limited.",
-    tags: ["MSME Certified", "Enterprise Verification"],
-  },
-
-  {
-    image: `${ASSETS}/cert_gst.png`,
-    authority: "Govt. of India • GST",
-    badge: "Tax Compliant",
-    title: "GST Registration (Form GST REG-06)",
-    description:
-      "Statutory GST registration confirming the company's registration under the applicable Goods and Services Tax framework.",
-    tags: ["GST REG-06", "Tax Compliance"],
-  },
-
-  {
-    image: `${ASSETS}/cert_incorporation.png`,
+    pdf: Form34,
     authority: "Ministry of Corporate Affairs",
-    badge: "Incorporated Entity",
+    badge: "Corporate Documentation",
+    title: "Form No. INC-34 — e-AOA",
+    description:
+      "Electronic Articles of Association document for company incorporation records.",
+    tags: ["e-AOA", "Form INC-34"],
+  },
+  {
+    pdf: memo,
+    authority: "Ministry of Corporate Affairs",
+    badge: "Corporate Documentation",
+    title: "Form No. INC-33 — e-MOA",
+    description:
+      "Electronic Memorandum of Association document for company incorporation records.",
+    tags: ["e-MOA", "Form INC-33"],
+  },
+  {
+    image: CertificateOnInc,
+    authority: "Government of India • Ministry of Corporate Affairs",
+    badge: "Incorporation",
     title: "Certificate of Incorporation",
     description:
-      "Official incorporation certificate for PTPGS India Private Limited under the Companies Act, 2013.",
-    tags: ["Companies Act 2013", "Corporate Registration"],
+      "Company incorporation certificate issued by the Ministry of Corporate Affairs.",
+    tags: ["Company Registration", "MCA"],
   },
-
   {
-    image: `${ASSETS}/cert_startupindia.png`,
-    authority: "DPIIT • Govt. of India",
-    badge: "Startup India",
-    title: "#StartupIndia Recognition Certificate",
+    image: intimationLetter,
+    authority: "DPIIT • Government of India",
+    badge: "Official Document",
+    title: "DPIIT Intimation Letter",
     description:
-      "Recognition by the Department for Promotion of Industry and Internal Trade, Government of India.",
-    tags: ["DPIIT Recognition", "Government Recognition"],
+      "DPIIT-related intimation document maintained in the company's records.",
+    tags: ["DPIIT", "Company Records"],
   },
-
   {
-    image: `${ASSETS}/cert_army.png`,
-    authority: "Indian Army • Defence Experience",
-    badge: "28 Years Service",
-    title: "Security Training & Service Certificate",
+    image: PAN,
+    authority: "Income Tax Department",
+    badge: "Tax Document",
+    title: "Company PAN Card",
     description:
-      "Certificate documenting the director's Indian Army service and relevant security, personnel management and operational experience.",
-    tags: ["Defence Experience", "Security Training"],
+      "Permanent Account Number document for the company.",
+    tags: ["PAN", "Tax Documentation"],
   },
-
   {
-    image: `${ASSETS}/cert_psara.png`,
-    authority: "Controlling Authority Haryana • PSARA 2005",
-    badge: "PSARA Compliant",
-    title: "Security Training Institute MoU",
+    image: TAN,
+    authority: "Income Tax Department",
+    badge: "Tax Document",
+    title: "Company TAN Certificate",
     description:
-      "Memorandum of Understanding with Eagle Pledge Security Training Institute for prescribed security guard training requirements.",
-    tags: ["160 Hrs Training", "PSARA 2005"],
-  },
-
-  {
-    image: `${ASSETS}/cert_ncvet.png`,
-    authority: "Govt. of India • NCVET & MEPSC",
-    badge: "Grade A Qualified",
-    title: "Upskilling Certification (Security Supervisor)",
-    description:
-      "Professional upskilling certification for security supervisor duties at NSQF Level 4.",
-    tags: ["NSQF Level 4", "Supervisor Training"],
+      "Tax Deduction and Collection Account Number document for the company.",
+    tags: ["TAN", "Tax Documentation"],
   },
 ];
+
 
 /* =========================================================
    HIGHLIGHTS
@@ -877,11 +944,10 @@ const complianceItems = [
 function Eyebrow({ children, light = false }) {
   return (
     <span
-      className={`mb-4 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[10px] font-black uppercase tracking-[0.17em] sm:text-xs ${
-        light
+      className={`mb-4 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[10px] font-black uppercase tracking-[0.17em] sm:text-xs ${light
           ? "border-white/15 bg-white/[0.07] text-amber-300"
           : "border-[#d5a63c]/30 bg-[#d5a63c]/10 text-[#80631d]"
-      }`}
+        }`}
     >
       <span className="h-1.5 w-1.5 rounded-full bg-[#d5a63c]" />
 
@@ -905,18 +971,16 @@ function SectionHeading({
       <Eyebrow light={light}>{eyebrow}</Eyebrow>
 
       <h2
-        className={`text-3xl font-black leading-[1.08] tracking-tight sm:text-4xl lg:text-5xl ${
-          light ? "text-white" : "text-[#10213e]"
-        }`}
+        className={`text-3xl font-black leading-[1.08] tracking-tight sm:text-4xl lg:text-5xl ${light ? "text-white" : "text-[#10213e]"
+          }`}
       >
         {title}
       </h2>
 
       {description && (
         <p
-          className={`mt-5 text-base leading-8 sm:text-lg ${
-            light ? "text-slate-300" : "text-slate-600"
-          }`}
+          className={`mt-5 text-base leading-8 sm:text-lg ${light ? "text-slate-300" : "text-slate-600"
+            }`}
         >
           {description}
         </p>
@@ -940,196 +1004,196 @@ export default function Certifications() {
           HERO
       ===================================================== */}
 
-   {/* =====================================================
+      {/* =====================================================
     HERO — CERTIFICATIONS
 ===================================================== */}
 
-<section className="relative isolate overflow-hidden bg-gradient-to-br from-[#061126] via-[#143967] to-[#352052] text-white">
+      <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#061126] via-[#143967] to-[#352052] text-white">
 
-  {/* Custom background image */}
-  <img
-    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2200&q=85"
-    alt=""
-    aria-hidden="true"
-    fetchPriority="high"
-    className="absolute inset-0 -z-30 h-full w-full object-cover object-center"
-  />
+        {/* Custom background image */}
+        <img
+          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2200&q=85"
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          className="absolute inset-0 -z-30 h-full w-full object-cover object-center"
+        />
 
-  {/* Dark overlay matching About page */}
-  <div className="absolute inset-0 -z-20 bg-gradient-to-br from-[#061126]/95 via-[#143967]/90 to-[#352052]/90" />
+        {/* Dark overlay matching About page */}
+        <div className="absolute inset-0 -z-20 bg-gradient-to-br from-[#061126]/95 via-[#143967]/90 to-[#352052]/90" />
 
-  <div className="absolute inset-0 -z-10 bg-[#061126]/30" />
+        <div className="absolute inset-0 -z-10 bg-[#061126]/30" />
 
-  {/* Decorative glows */}
-  <div className="pointer-events-none absolute -left-24 top-20 h-80 w-80 rounded-full bg-blue-400/20 blur-[120px]" />
+        {/* Decorative glows */}
+        <div className="pointer-events-none absolute -left-24 top-20 h-80 w-80 rounded-full bg-blue-400/20 blur-[120px]" />
 
-  <div className="pointer-events-none absolute -right-20 bottom-0 h-96 w-96 rounded-full bg-purple-500/20 blur-[130px]" />
+        <div className="pointer-events-none absolute -right-20 bottom-0 h-96 w-96 rounded-full bg-purple-500/20 blur-[130px]" />
 
-  <div className="pointer-events-none absolute right-[20%] top-10 h-52 w-52 rounded-full bg-[#d5a63c]/10 blur-[100px]" />
+        <div className="pointer-events-none absolute right-[20%] top-10 h-52 w-52 rounded-full bg-[#d5a63c]/10 blur-[100px]" />
 
-  <div className="relative mx-auto grid min-h-[600px] max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 sm:py-24 md:grid-cols-2 lg:min-h-[680px] lg:px-10 lg:py-32">
+        <div className="relative mx-auto grid min-h-[600px] max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 sm:py-24 md:grid-cols-2 lg:min-h-[680px] lg:px-10 lg:py-32">
 
-    {/* LEFT CONTENT */}
-    <div className="relative z-10">
+          {/* LEFT CONTENT */}
+          <div className="relative z-10">
 
-      <Eyebrow light>
-        Verified Credentials & Accreditations
-      </Eyebrow>
+            <Eyebrow light>
+              Verified Credentials & Accreditations
+            </Eyebrow>
 
-      <h1 className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-7xl">
+            <h1 className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-7xl">
 
-        Our{" "}
+              Our{" "}
 
-        <span className="bg-gradient-to-r from-amber-300 via-yellow-200 to-[#d5a63c] bg-clip-text text-transparent">
-          Certifications
-        </span>
+              <span className="bg-gradient-to-r from-amber-300 via-yellow-200 to-[#d5a63c] bg-clip-text text-transparent">
+                Certifications
+              </span>
 
-      </h1>
+            </h1>
 
-      <p className="mt-7 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg lg:text-xl">
-        Our credentials reflect our commitment to corporate
-        responsibility, statutory documentation, professional
-        training and security service standards.
-      </p>
+            <p className="mt-7 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg lg:text-xl">
+              Our credentials reflect our commitment to corporate
+              responsibility, statutory documentation, professional
+              training and security service standards.
+            </p>
 
-      {/* Feature pills */}
-      <div className="mt-9 flex flex-wrap gap-3">
+            {/* Feature pills */}
+            <div className="mt-9 flex flex-wrap gap-3">
 
-        <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.08] px-4 py-2.5 text-xs font-bold text-white backdrop-blur-md sm:text-sm">
-          <ShieldCheck size={16} className="text-[#e3b84f]" />
-          Verified Credentials
-        </div>
+              <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.08] px-4 py-2.5 text-xs font-bold text-white backdrop-blur-md sm:text-sm">
+                <ShieldCheck size={16} className="text-[#e3b84f]" />
+                Verified Credentials
+              </div>
 
-        <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.08] px-4 py-2.5 text-xs font-bold text-white backdrop-blur-md sm:text-sm">
-          <LockKeyhole size={16} className="text-[#e3b84f]" />
-          Statutory Compliance
-        </div>
+              <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.08] px-4 py-2.5 text-xs font-bold text-white backdrop-blur-md sm:text-sm">
+                <LockKeyhole size={16} className="text-[#e3b84f]" />
+                Statutory Compliance
+              </div>
 
-        <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.08] px-4 py-2.5 text-xs font-bold text-white backdrop-blur-md sm:text-sm">
-          <Award size={16} className="text-[#e3b84f]" />
-          Professional Standards
-        </div>
+              <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.08] px-4 py-2.5 text-xs font-bold text-white backdrop-blur-md sm:text-sm">
+                <Award size={16} className="text-[#e3b84f]" />
+                Professional Standards
+              </div>
 
-      </div>
-
-      {/* CTA buttons */}
-      <div className="mt-9 flex flex-wrap gap-4">
-
-        <button
-          type="button"
-          onClick={() =>
-            document.getElementById("certificates-list")?.scrollIntoView({
-              behavior: "smooth",
-            })
-          }
-          className="group inline-flex items-center gap-3 rounded-full bg-[#d5a63c] px-7 py-4 text-sm font-extrabold text-[#101827] shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-[#e5ba58] sm:text-base"
-        >
-          Explore Certificates
-
-          <ArrowRight
-            size={19}
-            className="transition-transform group-hover:translate-x-1"
-          />
-        </button>
-
-        <a
-          href="/contact"
-          className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.06] px-7 py-4 text-sm font-bold text-white backdrop-blur-md transition hover:border-[#d5a63c]/50 hover:bg-white/[0.12] sm:text-base"
-        >
-          Contact Us
-          <ChevronRight size={17} className="text-[#e3b84f]" />
-        </a>
-
-      </div>
-
-      {/* Breadcrumb */}
-      <div className="mt-9 flex items-center gap-3 text-sm text-slate-300">
-
-        <a
-          href="/"
-          className="transition hover:text-[#e5bd5c]"
-        >
-          Home
-        </a>
-
-        <ChevronRight size={15} className="text-[#d5a63c]" />
-
-        <span className="font-semibold text-white">
-          Certifications
-        </span>
-
-      </div>
-
-    </div>
-
-    {/* RIGHT IMAGE CARD */}
-    <div className="relative mx-auto w-full max-w-xl">
-
-      {/* Outer glow */}
-      <div className="absolute -inset-3 rounded-[34px] bg-gradient-to-br from-blue-400/30 via-transparent to-[#d5a63c]/25 blur-2xl" />
-
-      <div className="relative overflow-hidden rounded-[30px] border border-white/20 bg-white/[0.08] p-2 shadow-[0_35px_90px_rgba(0,0,0,0.4)] backdrop-blur-sm">
-
-        <div className="relative h-[330px] overflow-hidden rounded-[24px] sm:h-[440px]">
-
-          <img
-            src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=85"
-            alt="Professional reviewing business documents"
-            className="h-full w-full object-cover object-center"
-          />
-
-          {/* Image overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#061126]/95 via-[#061126]/15 to-transparent" />
-
-          {/* Image content */}
-          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-
-            <div className="mb-3 flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.2em] text-[#e6bf5e]">
-              <BadgeCheck size={17} />
-              Compliance & Trust
             </div>
 
-            <h2 className="max-w-md text-2xl font-black leading-tight text-white sm:text-3xl">
-              Built on Standards. Backed by Credentials.
-            </h2>
+            {/* CTA buttons */}
+            <div className="mt-9 flex flex-wrap gap-4">
 
-            <p className="mt-3 max-w-sm text-sm leading-6 text-slate-200">
-              Our registrations, recognitions and training records
-              support our commitment to professional operations.
-            </p>
+              <button
+                type="button"
+                onClick={() =>
+                  document.getElementById("certificates-list")?.scrollIntoView({
+                    behavior: "smooth",
+                  })
+                }
+                className="group inline-flex items-center gap-3 rounded-full bg-[#d5a63c] px-7 py-4 text-sm font-extrabold text-[#101827] shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-[#e5ba58] sm:text-base"
+              >
+                Explore Certificates
+
+                <ArrowRight
+                  size={19}
+                  className="transition-transform group-hover:translate-x-1"
+                />
+              </button>
+
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.06] px-7 py-4 text-sm font-bold text-white backdrop-blur-md transition hover:border-[#d5a63c]/50 hover:bg-white/[0.12] sm:text-base"
+              >
+                Contact Us
+                <ChevronRight size={17} className="text-[#e3b84f]" />
+              </a>
+
+            </div>
+
+            {/* Breadcrumb */}
+            <div className="mt-9 flex items-center gap-3 text-sm text-slate-300">
+
+              <a
+                href="/"
+                className="transition hover:text-[#e5bd5c]"
+              >
+                Home
+              </a>
+
+              <ChevronRight size={15} className="text-[#d5a63c]" />
+
+              <span className="font-semibold text-white">
+                Certifications
+              </span>
+
+            </div>
+
+          </div>
+
+          {/* RIGHT IMAGE CARD */}
+          <div className="relative mx-auto w-full max-w-xl">
+
+            {/* Outer glow */}
+            <div className="absolute -inset-3 rounded-[34px] bg-gradient-to-br from-blue-400/30 via-transparent to-[#d5a63c]/25 blur-2xl" />
+
+            <div className="relative overflow-hidden rounded-[30px] border border-white/20 bg-white/[0.08] p-2 shadow-[0_35px_90px_rgba(0,0,0,0.4)] backdrop-blur-sm">
+
+              <div className="relative h-[330px] overflow-hidden rounded-[24px] sm:h-[440px]">
+
+                <img
+                  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=85"
+                  alt="Professional reviewing business documents"
+                  className="h-full w-full object-cover object-center"
+                />
+
+                {/* Image overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#061126]/95 via-[#061126]/15 to-transparent" />
+
+                {/* Image content */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+
+                  <div className="mb-3 flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.2em] text-[#e6bf5e]">
+                    <BadgeCheck size={17} />
+                    Compliance & Trust
+                  </div>
+
+                  <h2 className="max-w-md text-2xl font-black leading-tight text-white sm:text-3xl">
+                    Built on Standards. Backed by Credentials.
+                  </h2>
+
+                  <p className="mt-3 max-w-sm text-sm leading-6 text-slate-200">
+                    Our registrations, recognitions and training records
+                    support our commitment to professional operations.
+                  </p>
+
+                </div>
+
+              </div>
+            </div>
+
+            {/* Floating information card */}
+            <div className="absolute -bottom-5 left-2 flex items-center gap-3 rounded-2xl border border-white/80 bg-white p-4 text-slate-900 shadow-2xl sm:-left-7 sm:p-5">
+
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-[#10213e] to-[#352052] text-[#e4bb58]">
+                <FileCheck size={25} />
+              </div>
+
+              <div>
+                <p className="font-extrabold">
+                  Official Credentials
+                </p>
+
+                <p className="mt-1 text-xs text-slate-500">
+                  Registration. Training. Compliance.
+                </p>
+              </div>
+
+            </div>
 
           </div>
 
         </div>
-      </div>
 
-      {/* Floating information card */}
-      <div className="absolute -bottom-5 left-2 flex items-center gap-3 rounded-2xl border border-white/80 bg-white p-4 text-slate-900 shadow-2xl sm:-left-7 sm:p-5">
+        {/* Bottom gold accent */}
+        <div className="absolute bottom-0 left-0 h-[3px] w-full bg-gradient-to-r from-transparent via-[#d5a63c] to-transparent" />
 
-        <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-[#10213e] to-[#352052] text-[#e4bb58]">
-          <FileCheck size={25} />
-        </div>
-
-        <div>
-          <p className="font-extrabold">
-            Official Credentials
-          </p>
-
-          <p className="mt-1 text-xs text-slate-500">
-            Registration. Training. Compliance.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  {/* Bottom gold accent */}
-  <div className="absolute bottom-0 left-0 h-[3px] w-full bg-gradient-to-r from-transparent via-[#d5a63c] to-transparent" />
-
-</section>
+      </section>
 
       {/* =====================================================
           HIGHLIGHTS
@@ -1180,11 +1244,10 @@ export default function Certifications() {
                 </div>
 
                 <div
-                  className={`absolute bottom-0 left-0 h-[3px] w-full ${
-                    index % 2 === 0
+                  className={`absolute bottom-0 left-0 h-[3px] w-full ${index % 2 === 0
                       ? "bg-[#d5a63c]"
                       : "bg-[#352052]"
-                  }`}
+                    }`}
                 />
 
               </article>
@@ -1233,12 +1296,27 @@ export default function Certifications() {
                   className="relative flex h-[300px] w-full items-center justify-center overflow-hidden bg-gradient-to-br from-[#eef3fa] via-white to-[#f8edda] p-5 sm:h-[320px]"
                 >
 
-                  <img
+                  {/* <img
                     src={certificate.image}
                     alt={certificate.title}
                     loading="lazy"
                     className="relative h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.035]"
-                  />
+                  /> */}
+
+                  {certificate.pdf ? (
+  <iframe
+    src={certificate.pdf}
+    title={certificate.title}
+    className="relative h-full w-full bg-white"
+  />
+) : (
+  <img
+    src={certificate.image}
+    alt={certificate.title}
+    loading="lazy"
+    className="relative h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.035]"
+  />
+)}
 
                   {/* hover */}
 
@@ -1323,11 +1401,10 @@ export default function Certifications() {
                 {/* bottom accent */}
 
                 <div
-                  className={`h-[3px] w-full ${
-                    index % 2 === 0
+                  className={`h-[3px] w-full ${index % 2 === 0
                       ? "bg-[#d5a63c]"
                       : "bg-[#352052]"
-                  }`}
+                    }`}
                 />
 
               </article>
@@ -1470,7 +1547,7 @@ export default function Certifications() {
           FINAL CTA
       ===================================================== */}
 
-     
+
 
       {/* =====================================================
           CERTIFICATE MODAL
@@ -1525,11 +1602,27 @@ export default function Certifications() {
 
             <div className="flex min-h-0 flex-1 items-center justify-center overflow-auto bg-gradient-to-br from-[#eef3fa] via-white to-[#f8edda] p-4 sm:p-8">
 
-              <img
+              {/* <img
                 src={selectedCertificate.image}
                 alt={selectedCertificate.title}
                 className="max-h-[72vh] max-w-full rounded-md object-contain shadow-lg"
-              />
+              /> */}
+
+
+              {selectedCertificate.pdf ? (
+                <iframe
+                  src={selectedCertificate.pdf}
+                  title={selectedCertificate.title}
+                  className="h-[72vh] w-full rounded-lg border-0 bg-white"
+                />
+              ) : (
+                <img
+                  src={selectedCertificate.image}
+                  alt={selectedCertificate.title}
+                  className="max-h-[72vh] max-w-full rounded-md object-contain shadow-lg"
+                />
+              )}
+
 
             </div>
 
@@ -1542,7 +1635,7 @@ export default function Certifications() {
               </p>
 
               <a
-                href={selectedCertificate.image}
+                href={selectedCertificate.pdf ||selectedCertificate.image}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#10213e] to-[#352052] px-5 py-3 text-xs font-extrabold text-white transition hover:opacity-90 sm:text-sm"

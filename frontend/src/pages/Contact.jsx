@@ -17,24 +17,24 @@ const contactDetails = [
     icon: Phone,
     title: "Call Us",
     description: "Speak directly with our team",
-    value: "+91-9716380301",
-    secondaryValue: "9217305046",
-    href: "tel:+919716380301",
+    value: "+91-92053 00460",
+    secondaryValue: "8700104667",
+    href: "tel:+9192053 00460",
   },
   {
     icon: Mail,
     title: "Email Us",
     description: "Send us your requirements",
-    value: "yogendrakumar@ptpgs.in",
-    href: "mailto:yogendrakumar@ptpgs.in",
+    value: "jaiprakash02800@gmail.com",
+    href: "mailto:jaiprakash02800@gmail.comn",
   },
   {
     icon: MapPin,
     title: "Visit Our Office",
     description: "Our business location",
     value:
-      "(Near Bani Camp), 25 Foota Road, Jai Vihar, South West Delhi - 110043",
-    href: "https://www.google.com/maps/search/?api=1&query=25+Foota+Road+Jai+Vihar+Delhi",
+      "H-8 G/F, Khata No - 51/21, Jai Vihar Phase -1, Najafgarh, New Delhi, South West Delhi- 110043, Delhi",
+    href: "https://www.google.com/maps/search/H-8+G%2FF,+Khata+No+-+51%2F21,+Jai+Vihar+Phase+-1,+Najafgarh,+New+Delhi,+South+West+Delhi-+110043,+Delhi/@28.6103797,76.9717853,14z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   },
 ];
 
@@ -292,17 +292,19 @@ const Contact = () => {
                 <div>
                   <h3 className="font-bold">Office Address</h3>
                   <p className="mt-2 text-sm leading-7 text-slate-300">
-                    Near Bani Camp, 25 Foota Road,
+                    H-8 G/F, Khata No. 51/21,
                     <br />
-                    Jai Vihar, South West Delhi,
+                    Jai Vihar Phase-1, Najafgarh,
                     <br />
-                    Delhi - 110043
+                    New Delhi, Delhi - 110043
                   </p>
                 </div>
               </div>
 
               <a
-                href="https://www.google.com/maps/search/?api=1&query=25+Foota+Road+Jai+Vihar+Delhi"
+                // href="https://www.google.com/maps/search/H-8+G%2FF,+Khata+No+-+51%2F21,+Jai+Vihar+Phase+-1,+Najafgarh,+New+Delhi,+South+West+Delhi-+110043,+Delhi/@28.6103797,76.9717853,14z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D"
+
+                href="https://www.google.com/maps/dir/?api=1&destination=H-8%20G%2FF%2C%20Khata%20No%2051%2F21%2C%20Jai%20Vihar%20Phase%201%2C%20Najafgarh%2C%20New%20Delhi%20110043"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-8 inline-flex items-center gap-2 rounded-md bg-amber-400 px-5 py-3 text-sm font-bold text-[#111827] transition hover:bg-amber-300"
@@ -313,16 +315,27 @@ const Contact = () => {
             </div>
 
             <div className="min-h-[320px] bg-slate-200 sm:min-h-[400px]">
-              <iframe
-                title="PTPGS office location"
-                src="https://maps.google.com/maps?q=25%20Foota%20Road%2C%20Jai%20Vihar%2C%20Delhi%20110043&t=&z=14&ie=UTF8&iwloc=&output=embed"
+              {/* <iframe
+                title="JIS Security office location"
+                src="https://www.google.com/maps/search/H-8+G%2FF,+Khata+No+-+51%2F21,+Jai+Vihar+Phase+-1,+Najafgarh,+New+Delhi,+South+West+Delhi-+110043,+Delhi/@28.6103797,76.9717853,14z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: "320px" }}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
-              />
+              /> */}
+
+              <iframe
+  title="JIS Security Office Location"
+  src="https://maps.google.com/maps?q=H-8%20G%2FF%2C%20Khata%20No%2051%2F21%2C%20Jai%20Vihar%20Phase%201%2C%20Najafgarh%2C%20New%20Delhi%20110043&t=&z=15&ie=UTF8&iwloc=&output=embed"
+  width="100%"
+  height="100%"
+  style={{ border: 0, minHeight: "320px" }}
+  loading="lazy"
+  allowFullScreen
+  referrerPolicy="no-referrer-when-downgrade"
+/>
             </div>
           </div>
         </div>

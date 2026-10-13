@@ -950,6 +950,13 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import CertificateOnInc from "../assets/Certificate_of_Incorporation_JIS.jpg"
+import intimationLetter from "../assets/intimationLetter.jpg"
+import PAN from "../assets/PAN_JIS.jpg"
+import TAN from "../assets/TAN_JIS.jpg"
+import Form34 from "../assets/Form_No_INC-34.pdf"
+import memo from "../assets/e-memo.pdf"
+import QuoteForm from "../components/home/QuoteForm";
 
 import {
   ShieldCheck,
@@ -1038,11 +1045,10 @@ function Reveal({
 function Eyebrow({ children, light = false }) {
   return (
     <span
-      className={`mb-4 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.18em] ${
-        light
-          ? "border-white/20 bg-white/10 text-white"
-          : "border-blue-100 bg-blue-50 text-blue-700"
-      }`}
+      className={`mb-4 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.18em] ${light
+        ? "border-white/20 bg-white/10 text-white"
+        : "border-blue-100 bg-blue-50 text-blue-700"
+        }`}
     >
       <span className="h-2 w-2 rounded-full bg-amber-400" />
       {children}
@@ -1059,25 +1065,22 @@ function SectionTitle({
 }) {
   return (
     <Reveal
-      className={`mb-12 ${
-        centered ? "mx-auto max-w-3xl text-center" : "max-w-2xl"
-      }`}
+      className={`mb-12 ${centered ? "mx-auto max-w-3xl text-center" : "max-w-2xl"
+        }`}
     >
       <Eyebrow light={light}>{eyebrow}</Eyebrow>
 
       <h2
-        className={`text-3xl font-black leading-tight tracking-tight sm:text-4xl lg:text-[46px] ${
-          light ? "text-white" : "text-slate-900"
-        }`}
+        className={`text-3xl font-black leading-tight tracking-tight sm:text-4xl lg:text-[46px] ${light ? "text-white" : "text-slate-900"
+          }`}
       >
         {title}
       </h2>
 
       {description && (
         <p
-          className={`mx-auto mt-5 max-w-2xl text-base leading-7 sm:text-lg ${
-            light ? "text-slate-300" : "text-slate-600"
-          }`}
+          className={`mx-auto mt-5 max-w-2xl text-base leading-7 sm:text-lg ${light ? "text-slate-300" : "text-slate-600"
+            }`}
         >
           {description}
         </p>
@@ -1182,9 +1185,9 @@ function Hero() {
   const slide = heroSlides[activeSlide];
 
   return (
-    <section 
-    // className="relative isolate overflow-hidden bg-[#07152d] text-white"
-    className="relative isolate overflow-hidden bg-gradient-to-br from-[#061226] via-[#16345d] to-[#30205f] text-white"
+    <section
+      // className="relative isolate overflow-hidden bg-[#07152d] text-white"
+      className="relative isolate overflow-hidden bg-gradient-to-br from-[#061226] via-[#16345d] to-[#30205f] text-white"
     >
       {/* Background decoration */}
       <div className="pointer-events-none absolute -left-40 top-10 h-96 w-96 rounded-full bg-blue-500/20 blur-[120px]" />
@@ -1325,11 +1328,10 @@ function Hero() {
                         key={item.label}
                         aria-label={`Go to slide ${index + 1}`}
                         onClick={() => setActiveSlide(index)}
-                        className={`h-1.5 rounded-full transition-all duration-300 ${
-                          index === activeSlide
-                            ? "w-10 bg-amber-300"
-                            : "w-5 bg-white/40 hover:bg-white/70"
-                        }`}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${index === activeSlide
+                          ? "w-10 bg-amber-300"
+                          : "w-5 bg-white/40 hover:bg-white/70"
+                          }`}
                       />
                     ))}
                   </div>
@@ -1386,9 +1388,9 @@ const statColors = {
 
 function Statistics() {
   return (
-    <section 
-    // className="relative z-10 bg-gradient-to-b from-[#f0f5ff] via-white to-white px-5 pb-16 pt-16 sm:px-8 lg:px-10"
-    className="relative z-10 bg-gradient-to-b from-[#dce8ff] via-[#f5f7ff] to-white px-5 pb-16 pt-16 sm:px-8 lg:px-10"
+    <section
+      // className="relative z-10 bg-gradient-to-b from-[#f0f5ff] via-white to-white px-5 pb-16 pt-16 sm:px-8 lg:px-10"
+      className="relative z-10 bg-gradient-to-b from-[#dce8ff] via-[#f5f7ff] to-white px-5 pb-16 pt-16 sm:px-8 lg:px-10"
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat, index) => {
@@ -1442,10 +1444,10 @@ function AboutSection() {
 
   return (
     <section
-    //  className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/80 to-indigo-100/70 px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
+      //  className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/80 to-indigo-100/70 px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
 
-    className="relative overflow-hidden bg-gradient-to-br from-[#edf5ff] via-[#f0ebff] to-[#fff0d7] px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
-     >
+      className="relative overflow-hidden bg-gradient-to-br from-[#edf5ff] via-[#f0ebff] to-[#fff0d7] px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
+    >
       <div className="pointer-events-none absolute -left-36 top-20 h-72 w-72 rounded-full bg-sky-300/20 blur-[100px]" />
       <div className="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-indigo-400/15 blur-[100px]" />
 
@@ -1613,9 +1615,9 @@ const services = [
 function SolutionsSection() {
   return (
     <section
-    // className="relative overflow-hidden bg-white px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
-    className="relative overflow-hidden bg-gradient-to-br from-[#f0f6ff] via-[#f4f0ff] to-[#fff7eb] px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
-    
+      // className="relative overflow-hidden bg-white px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
+      className="relative overflow-hidden bg-gradient-to-br from-[#f0f6ff] via-[#f4f0ff] to-[#fff7eb] px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
+
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(59,130,246,0.09),_transparent_40%),radial-gradient(ellipse_at_bottom_right,_rgba(245,158,11,0.10),_transparent_40%)]" />
 
@@ -1726,11 +1728,11 @@ const reasons = [
 
 function WhyChooseUs() {
   return (
-    <section 
-    // className="relative overflow-hidden bg-gradient-to-br from-[#09172f] via-[#102b52] to-[#20245b] px-5 py-20 text-white sm:px-8 lg:px-10 lg:py-28"
+    <section
+      // className="relative overflow-hidden bg-gradient-to-br from-[#09172f] via-[#102b52] to-[#20245b] px-5 py-20 text-white sm:px-8 lg:px-10 lg:py-28"
 
-    className="relative overflow-hidden bg-gradient-to-br from-[#07152e] via-[#174579] to-[#422569] px-5 py-20 text-white sm:px-8 lg:px-10 lg:py-28"
-    
+      className="relative overflow-hidden bg-gradient-to-br from-[#07152e] via-[#174579] to-[#422569] px-5 py-20 text-white sm:px-8 lg:px-10 lg:py-28"
+
     >
       <div className="pointer-events-none absolute -left-20 top-20 h-80 w-80 rounded-full bg-blue-400/15 blur-[100px]" />
       <div className="pointer-events-none absolute -right-20 bottom-0 h-96 w-96 rounded-full bg-amber-400/10 blur-[120px]" />
@@ -1842,9 +1844,9 @@ const processSteps = [
 
 function WorkProcess() {
   return (
-    <section 
-    // className="relative overflow-hidden bg-gradient-to-br from-amber-50 via-white to-sky-50 px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
-className="relative overflow-hidden bg-gradient-to-br from-[#fff0d6] via-[#edf4ff] to-[#ddf8f4] px-5 py-20 sm:px-8 lg:px-10 lg:py-28"    
+    <section
+      // className="relative overflow-hidden bg-gradient-to-br from-amber-50 via-white to-sky-50 px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
+      className="relative overflow-hidden bg-gradient-to-br from-[#fff0d6] via-[#edf4ff] to-[#ddf8f4] px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
     >
       <div className="relative mx-auto max-w-7xl">
         <SectionTitle
@@ -1915,10 +1917,10 @@ function TrustSection() {
 
   return (
     <section
-    //  className="relative overflow-hidden bg-white px-5 py-20 sm:px-8 lg:px-10 lg:py-24"
-    className="relative overflow-hidden bg-gradient-to-br from-[#e8f0ff] via-[#f5f0ff] to-[#fff3e6] px-5 py-20 sm:px-8 lg:px-10 lg:py-24"
-     
-     >
+      //  className="relative overflow-hidden bg-white px-5 py-20 sm:px-8 lg:px-10 lg:py-24"
+      className="relative overflow-hidden bg-gradient-to-br from-[#e8f0ff] via-[#f5f0ff] to-[#fff3e6] px-5 py-20 sm:px-8 lg:px-10 lg:py-24"
+
+    >
       <div className="pointer-events-none absolute right-0 top-0 h-80 w-80 rounded-full bg-indigo-100/70 blur-[100px]" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
@@ -2026,11 +2028,11 @@ function FAQSection() {
 
   return (
     <section
-    //  className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50/60 to-amber-50/70 px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
+      //  className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50/60 to-amber-50/70 px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
 
-    className="relative overflow-hidden bg-gradient-to-br from-[#e6efff] via-[#f0eaff] to-[#ffefd2] px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
-     
-     >
+      className="relative overflow-hidden bg-gradient-to-br from-[#e6efff] via-[#f0eaff] to-[#ffefd2] px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
+
+    >
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <Reveal variants={revealLeft}>
           <Eyebrow>Frequently Asked Questions</Eyebrow>
@@ -2079,11 +2081,10 @@ function FAQSection() {
               <motion.div
                 variants={revealUp}
                 key={faq.question}
-                className={`overflow-hidden rounded-2xl border bg-white transition-all duration-300 ${
-                  isOpen
-                    ? "border-blue-200 shadow-[0_18px_45px_rgba(37,99,235,0.10)]"
-                    : "border-white shadow-[0_8px_25px_rgba(15,23,42,0.05)]"
-                }`}
+                className={`overflow-hidden rounded-2xl border bg-white transition-all duration-300 ${isOpen
+                  ? "border-blue-200 shadow-[0_18px_45px_rgba(37,99,235,0.10)]"
+                  : "border-white shadow-[0_8px_25px_rgba(15,23,42,0.05)]"
+                  }`}
               >
                 <button
                   type="button"
@@ -2096,11 +2097,10 @@ function FAQSection() {
                   </span>
 
                   <span
-                    className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl transition-all duration-300 ${
-                      isOpen
-                        ? "rotate-45 bg-blue-700 text-white"
-                        : "bg-blue-50 text-blue-700"
-                    }`}
+                    className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl transition-all duration-300 ${isOpen
+                      ? "rotate-45 bg-blue-700 text-white"
+                      : "bg-blue-50 text-blue-700"
+                      }`}
                   >
                     <span className="text-2xl font-light leading-none">+</span>
                   </span>
@@ -2135,9 +2135,9 @@ function FAQSection() {
 
 function GoldCallout() {
   return (
-    <section 
-    // className="relative overflow-hidden bg-white px-5 py-16 sm:px-8 lg:px-10 lg:py-20"
-    className="relative overflow-hidden bg-gradient-to-b from-[#f0eaff] via-white to-[#e4eeff] px-5 py-16 sm:px-8 lg:px-10 lg:py-20"
+    <section
+      // className="relative overflow-hidden bg-white px-5 py-16 sm:px-8 lg:px-10 lg:py-20"
+      className="relative overflow-hidden bg-gradient-to-b from-[#f0eaff] via-white to-[#e4eeff] px-5 py-16 sm:px-8 lg:px-10 lg:py-20"
 
     >
       <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[30px] bg-gradient-to-br from-blue-950 via-blue-800 to-indigo-800 p-7 shadow-[0_30px_80px_rgba(30,58,138,0.22)] sm:p-10 lg:p-14">
@@ -2214,10 +2214,10 @@ function CertificationsSection() {
   ];
 
   return (
-    <section 
-    // className="relative overflow-hidden bg-gradient-to-r from-slate-50 via-white to-blue-50 px-5 py-16 sm:px-8 lg:px-10 lg:py-20"
+    <section
+      // className="relative overflow-hidden bg-gradient-to-r from-slate-50 via-white to-blue-50 px-5 py-16 sm:px-8 lg:px-10 lg:py-20"
 
-    className="relative overflow-hidden bg-gradient-to-r from-[#e5edff] via-[#fff5e1] to-[#eee7ff] px-5 py-16 sm:px-8 lg:px-10 lg:py-20"
+      className="relative overflow-hidden bg-gradient-to-r from-[#e5edff] via-[#fff5e1] to-[#eee7ff] px-5 py-16 sm:px-8 lg:px-10 lg:py-20"
     >
       <div className="mx-auto max-w-7xl">
         <SectionTitle
@@ -2237,11 +2237,10 @@ function CertificationsSection() {
                   className="group rounded-2xl border border-white bg-white p-6 text-center shadow-[0_12px_35px_rgba(15,23,42,0.06)] transition-all duration-300 hover:shadow-[0_20px_45px_rgba(37,99,235,0.11)]"
                 >
                   <div
-                    className={`mx-auto grid h-14 w-14 place-items-center rounded-2xl text-white shadow-lg transition-transform duration-300 group-hover:rotate-3 group-hover:scale-110 ${
-                      index % 2 === 0
-                        ? "bg-gradient-to-br from-blue-600 to-indigo-600 shadow-blue-500/20"
-                        : "bg-gradient-to-br from-amber-400 to-orange-500 shadow-amber-500/20"
-                    }`}
+                    className={`mx-auto grid h-14 w-14 place-items-center rounded-2xl text-white shadow-lg transition-transform duration-300 group-hover:rotate-3 group-hover:scale-110 ${index % 2 === 0
+                      ? "bg-gradient-to-br from-blue-600 to-indigo-600 shadow-blue-500/20"
+                      : "bg-gradient-to-br from-amber-400 to-orange-500 shadow-amber-500/20"
+                      }`}
                   >
                     <Icon size={26} />
                   </div>
@@ -2264,42 +2263,83 @@ function CertificationsSection() {
 }
 
 
+// const homeCertifications = [
+//   {
+//     image: "https://ptpgs.in/assets/img/cert_udyam.png",
+//     authority: "Govt. of India • MSME",
+//     title: "Udyam Registration Certificate",
+//   },
+//   {
+//     image: "https://ptpgs.in/assets/img/cert_gst.png",
+//     authority: "Govt. of India • GST",
+//     title: "GST Registration Certificate (Form GST REG-06)",
+//   },
+//   {
+//     image: "https://ptpgs.in/assets/img/cert_incorporation.png",
+//     authority: "Ministry of Corporate Affairs",
+//     title: "Certificate of Incorporation",
+//   },
+//   {
+//     image: {intimationLetter},
+//     authority: "DPIIT • Govt. of India",
+//     title: "Certification of Incorporation JIS",
+//   },
+//   // {
+//   //   pdf: "../assets/Certificate_of_Incorporation_JIS.pdf",
+//   //   authority: "Ministry of Corporate Affairs",
+//   //   title: "Certificate of Incorporation",
+//   // },
+//   {
+//     image: {intimationLetter},
+//     authority: "Indian Army • Defence Experience",
+//     title: "Security Training & Service Certificate",
+//   },
+//   {
+//     image: "https://ptpgs.in/assets/img/cert_psara.png",
+//     authority: "Controlling Authority Haryana • PSARA 2005",
+//     title: "Security Training Institute MoU",
+//   },
+//   {
+//     image: "https://ptpgs.in/assets/img/cert_ncvet.png",
+//     authority: "Govt. of India • NCVET & MEPSC",
+//     title: "Upskilling Certification (Security Supervisor)",
+//   },
+// ];
+
+
+
 const homeCertifications = [
   {
-    image: "https://ptpgs.in/assets/img/cert_udyam.png",
-    authority: "Govt. of India • MSME",
-    title: "Udyam Registration Certificate",
+    pdf: Form34,
+    authority: "e-AOA (e-Articles of Association)",
+    title: "Form No. INC-34",
   },
   {
-    image: "https://ptpgs.in/assets/img/cert_gst.png",
-    authority: "Govt. of India • GST",
-    title: "GST Registration Certificate (Form GST REG-06)",
+    pdf: memo,
+    authority: "e-MOA (e-Memorandum of Association)",
+    title: "Form No. INC-33",
   },
   {
-    image: "https://ptpgs.in/assets/img/cert_incorporation.png",
-    authority: "Ministry of Corporate Affairs",
+    image: CertificateOnInc,
+    authority: "GOVERNMENT OF INDIA MINISTRY OF CORPORATE AFFAIRS",
     title: "Certificate of Incorporation",
   },
   {
-    image: "https://ptpgs.in/assets/img/cert_startupindia.png",
+    image: intimationLetter,
     authority: "DPIIT • Govt. of India",
-    title: "Startup India Recognition Certificate",
+    title: "DPIIT Intimation Letter",
   },
   {
-    image: "https://ptpgs.in/assets/img/cert_army.png",
-    authority: "Indian Army • Defence Experience",
-    title: "Security Training & Service Certificate",
+    image: PAN,
+    authority: "Income Tax Department • Govt. of India",
+    title: "Company PAN Card",
   },
   {
-    image: "https://ptpgs.in/assets/img/cert_psara.png",
-    authority: "Controlling Authority Haryana • PSARA 2005",
-    title: "Security Training Institute MoU",
+    image: TAN,
+    authority: "Income Tax Department • Govt. of India",
+    title: "Company TAN Certificate",
   },
-  {
-    image: "https://ptpgs.in/assets/img/cert_ncvet.png",
-    authority: "Govt. of India • NCVET & MEPSC",
-    title: "Upskilling Certification (Security Supervisor)",
-  },
+
 ];
 
 
@@ -2330,9 +2370,9 @@ function CertificateCarouselSection() {
 
   return (
     <section
-    // className="relative overflow-hidden bg-gradient-to-br from-[#eef4ff] via-white to-amber-50 px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
-    className="relative overflow-hidden bg-gradient-to-br from-[#e4ecff] via-[#f3eaff] to-[#ffefd8] px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
-    
+      // className="relative overflow-hidden bg-gradient-to-br from-[#eef4ff] via-white to-amber-50 px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
+      className="relative overflow-hidden bg-gradient-to-br from-[#e4ecff] via-[#f3eaff] to-[#ffefd8] px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
+
     >
       {/* Background decoration */}
       <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-blue-300/20 blur-[100px]" />
@@ -2370,7 +2410,7 @@ function CertificateCarouselSection() {
           >
             {/* Certificate image area */}
             <div className="relative flex h-[390px] items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50 sm:h-[520px] lg:h-[570px]">
-              <AnimatePresence mode="wait">
+              {/* <AnimatePresence mode="wait">
                 <motion.img
                   key={current.image}
                   src={current.image}
@@ -2381,6 +2421,37 @@ function CertificateCarouselSection() {
                   transition={{ duration: 0.35 }}
                   className="h-[82%] max-w-[72%] rounded-md object-contain shadow-xl"
                 />
+              </AnimatePresence> */}
+
+              {/* Certificate image / PDF area */}
+              <AnimatePresence mode="wait">
+                {current.pdf ? (
+                  <motion.div
+                    key={current.pdf}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.35 }}
+                    className="h-full w-full p-3 sm:p-5"
+                  >
+                    <iframe
+                      src={current.pdf}
+                      title={current.title}
+                      className="h-full w-full rounded-lg border-0 bg-white"
+                    />
+                  </motion.div>
+                ) : (
+                  <motion.img
+                    key={current.image}
+                    src={current.image}
+                    alt={current.title}
+                    initial={{ opacity: 0, scale: 0.96, y: 10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.98, y: -8 }}
+                    transition={{ duration: 0.35 }}
+                    className="max-h-[82%] max-w-[72%] rounded-md object-contain shadow-xl"
+                  />
+                )}
               </AnimatePresence>
 
               {/* Slide counter */}
@@ -2412,16 +2483,15 @@ function CertificateCarouselSection() {
               <div className="absolute bottom-4 left-1/2 flex max-w-[85%] -translate-x-1/2 flex-wrap items-center justify-center gap-2 rounded-full bg-slate-900/75 px-4 py-3 backdrop-blur-sm sm:bottom-5">
                 {homeCertifications.map((certificate, i) => (
                   <button
-                    key={certificate.image}
+                    key={certificate.pdf || certificate.image}
                     type="button"
                     onClick={() => setIndex(i)}
                     aria-label={`Show certificate ${i + 1}`}
                     aria-pressed={i === index}
-                    className={`h-2.5 rounded-full transition-all duration-300 ${
-                      i === index
-                        ? "w-7 bg-amber-400"
-                        : "w-2.5 bg-white/70 hover:bg-white"
-                    }`}
+                    className={`h-2.5 rounded-full transition-all duration-300 ${i === index
+                      ? "w-7 bg-amber-400"
+                      : "w-2.5 bg-white/70 hover:bg-white"
+                      }`}
                   />
                 ))}
               </div>
@@ -2444,6 +2514,16 @@ function CertificateCarouselSection() {
                 >
                   {current.title}
                 </motion.h3>
+                {current.pdf && (
+                  <a
+                    href={current.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-2 rounded-full bg-amber-400 px-5 py-2.5 text-sm font-bold text-slate-950 transition hover:bg-amber-300"
+                  >
+                    View Full PDF <ArrowRight size={16} />
+                  </a>
+                )}
               </AnimatePresence>
             </div>
           </div>
@@ -2650,6 +2730,8 @@ export default function Home() {
 
       {/* Certifications carousel after FAQ */}
       <CertificateCarouselSection />
+
+      <QuoteForm/>
 
       <GoldCallout />
     </main>

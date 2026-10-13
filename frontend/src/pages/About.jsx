@@ -471,6 +471,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import CertificateOnInc from "../assets/Certificate_of_Incorporation_JIS.jpg"
+import intimationLetter from "../assets/intimationLetter.jpg"
+import PAN from "../assets/PAN_JIS.jpg"
+import TAN from "../assets/TAN_JIS.jpg"
+import Form34 from "../assets/Form_No_INC-34.pdf"
+import memo from "../assets/e-memo.pdf"
 import {
   ArrowRight,
   ShieldCheck,
@@ -525,11 +531,10 @@ function Reveal({
 function Eyebrow({ children, light = false }) {
   return (
     <span
-      className={`mb-4 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.18em] sm:text-xs ${
-        light
-          ? "border-white/20 bg-white/10 text-amber-300"
-          : "border-blue-200/70 bg-white/65 text-blue-800 shadow-sm"
-      }`}
+      className={`mb-4 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.18em] sm:text-xs ${light
+        ? "border-white/20 bg-white/10 text-amber-300"
+        : "border-blue-200/70 bg-white/65 text-blue-800 shadow-sm"
+        }`}
     >
       <span className="h-2 w-2 rounded-full bg-amber-400" />
       {children}
@@ -546,25 +551,22 @@ function SectionHeading({
 }) {
   return (
     <Reveal
-      className={`mb-12 max-w-3xl ${
-        centered ? "mx-auto text-center" : ""
-      }`}
+      className={`mb-12 max-w-3xl ${centered ? "mx-auto text-center" : ""
+        }`}
     >
       <Eyebrow light={light}>{eyebrow}</Eyebrow>
 
       <h2
-        className={`text-3xl font-black leading-tight tracking-tight sm:text-4xl lg:text-[46px] ${
-          light ? "text-white" : "text-[#10213e]"
-        }`}
+        className={`text-3xl font-black leading-tight tracking-tight sm:text-4xl lg:text-[46px] ${light ? "text-white" : "text-[#10213e]"
+          }`}
       >
         {title}
       </h2>
 
       {description && (
         <p
-          className={`mt-5 text-base leading-8 sm:text-lg ${
-            light ? "text-slate-300" : "text-slate-600"
-          }`}
+          className={`mt-5 text-base leading-8 sm:text-lg ${light ? "text-slate-300" : "text-slate-600"
+            }`}
         >
           {description}
         </p>
@@ -734,43 +736,40 @@ const securityFaqs = [
    CERTIFICATION DATA
 ========================= */
 
-const certifications = [
+const homeCertifications = [
   {
-    image: `${ASSETS}/cert_udyam.png`,
-    authority: "Govt. of India • MSME",
-    title: "Udyam Registration Certificate",
+    pdf: Form34,
+    authority: "e-AOA (e-Articles of Association)",
+    title: "Form No. INC-34",
   },
   {
-    image: `${ASSETS}/cert_gst.png`,
-    authority: "Govt. of India • GST",
-    title: "GST Registration Certificate (Form GST REG-06)",
+    pdf: memo,
+    authority: "e-MOA (e-Memorandum of Association)",
+    title: "Form No. INC-33",
   },
   {
-    image: `${ASSETS}/cert_incorporation.png`,
-    authority: "Ministry of Corporate Affairs",
+    image: CertificateOnInc,
+    authority: "GOVERNMENT OF INDIA MINISTRY OF CORPORATE AFFAIRS",
     title: "Certificate of Incorporation",
   },
   {
-    image: `${ASSETS}/cert_startupindia.png`,
+    image: intimationLetter,
     authority: "DPIIT • Govt. of India",
-    title: "#StartupIndia Recognition Certificate",
+    title: "DPIIT Intimation Letter",
   },
   {
-    image: `${ASSETS}/cert_army.png`,
-    authority: "Indian Army • Defence Experience",
-    title: "Security Training & Service Certificate",
+    image: PAN,
+    authority: "Income Tax Department • Govt. of India",
+    title: "Company PAN Card",
   },
   {
-    image: `${ASSETS}/cert_psara.png`,
-    authority: "Controlling Authority Haryana • PSARA 2005",
-    title: "Security Training Institute MoU (Eagle Pledge)",
+    image: TAN,
+    authority: "Income Tax Department • Govt. of India",
+    title: "Company TAN Certificate",
   },
-  {
-    image: `${ASSETS}/cert_ncvet.png`,
-    authority: "Govt. of India • NCVET & MEPSC",
-    title: "Upskilling Certification (Security Supervisor)",
-  },
+
 ];
+
 
 const serviceOptions = [
   "House Keeping Services",
@@ -786,35 +785,119 @@ const serviceOptions = [
 const pillField =
   "w-full appearance-none rounded-full border border-slate-200 bg-slate-50 px-6 py-4 text-base text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-[#14246b] focus:bg-white focus:ring-2 focus:ring-[#14246b]/15 sm:px-8 sm:py-5 sm:text-lg";
 
+
+const textareaField =
+  "w-full resize-none rounded-[2rem] border border-slate-200 bg-slate-50 px-6 py-4 text-base text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-[#14246b] focus:bg-white focus:ring-2 focus:ring-[#14246b]/15 sm:px-8 sm:py-5 sm:text-lg";
 /* =========================
    CERTIFICATIONS + QUOTE
    ORIGINAL COMPONENT KEPT
 ========================= */
 
+
+// function CertificationsQuoteSection() {
+//   const [index, setIndex] = useState(0);
+//   const [paused, setPaused] = useState(false);
+//   const [submitted, setSubmitted] = useState(false);
+
+//   const total = homeCertifications.length;
+//   const current = homeCertifications[index];
+
+//   const prev = () => {
+//     setIndex((i) => (i - 1 + total) % total);
+//   };
+
+//   const next = () => {
+//     setIndex((i) => (i + 1) % total);
+//   };
+
+//   useEffect(() => {
+//     if (paused || total < 2) return;
+
+//     const timer = setInterval(() => {
+//       setIndex((i) => (i + 1) % total);
+//     }, 4000);
+
+//     return () => clearInterval(timer);
+//   }, [paused, total]);
+
+//   function handleSubmit(event) {
+//     event.preventDefault();
+//     setSubmitted(true);
+//   }
+
 function CertificationsQuoteSection() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const total = certifications.length;
-  const current = certifications[index];
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState({ type: "", text: "" });
 
-  const prev = () => setIndex((i) => (i - 1 + total) % total);
-  const next = () => setIndex((i) => (i + 1) % total);
+  const total = homeCertifications.length;
+  const current = homeCertifications[index];
+
+  const prev = () => {
+    setIndex((i) => (i - 1 + total) % total);
+  };
+
+  const next = () => {
+    setIndex((i) => (i + 1) % total);
+  };
 
   useEffect(() => {
     if (paused || total < 2) return;
-    const timer = setInterval(() => setIndex((i) => (i + 1) % total), 4000);
+
+    const timer = setInterval(() => {
+      setIndex((i) => (i + 1) % total);
+    }, 4000);
+
     return () => clearInterval(timer);
   }, [paused, total]);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    setSubmitted(true);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      mobile: formData.get("mobile"),
+      service: formData.get("service"),
+      location: formData.get("location"),
+      message: formData.get("message"),
+    };
+
+    setLoading(true);
+    setStatus({ type: "", text: "" });
+
+    try {
+      const res = await fetch("http://localhost:3000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
+
+      setStatus({
+        type: "success",
+        text: "Thank you! Your message has been sent successfully.",
+      });
+      form.reset();
+    } catch (error) {
+      setStatus({
+        type: "error",
+        text: "Something went wrong. Please try again.",
+      });
+    } finally {
+      setLoading(false);
+    }
   }
+
 
   return (
     <section>
-      {/* Dark image hero with heading */}
+      {/* Hero Banner */}
       <div className="relative isolate overflow-hidden bg-slate-700">
         <img
           src={`${ASSETS}/banner-img.jpg`}
@@ -823,120 +906,321 @@ function CertificationsQuoteSection() {
           loading="lazy"
           className="absolute inset-0 -z-20 h-full w-full object-cover object-right"
         />
+
         <div className="absolute inset-0 -z-10 bg-black/65" />
+
         <div className="mx-auto max-w-6xl px-5 pb-56 pt-24 text-center sm:px-8 sm:pb-72 sm:pt-32 lg:pb-96 lg:pt-40">
           <Reveal>
             <h2 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
-              <span className="text-[#14246b]">One Solution</span> for All Your Housekeeping, Security, and Manpower Needs
+              <span className="text-[#d5a63c]">One Solution</span> for All
+              Your Housekeeping, Security, and Manpower Needs
             </h2>
           </Reveal>
         </div>
       </div>
 
-      {/* Dark rounded container overlapping the hero */}
+      {/* Certifications + Quote */}
       <div className="relative z-10 -mt-44 bg-gradient-to-b from-transparent via-transparent to-[#f4f7fa] px-3 pb-16 sm:-mt-60 sm:px-6 lg:-mt-80 lg:px-10 lg:pb-24">
         <div className="mx-auto max-w-7xl rounded-[2rem] bg-[#0b0b0b] p-5 shadow-2xl sm:rounded-[2.5rem] sm:p-8 lg:p-10">
           <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
-            {/* LEFT: Our Certifications carousel */}
+
+            {/* LEFT: Certifications Carousel */}
             <div className="lg:pt-6">
-              <h2 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">Our Certifications</h2>
-              <div className="mt-4 h-1 w-24 bg-[#14246b]" />
+              <h2 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
+                Our Certifications
+              </h2>
+
+              <div className="mt-4 h-1 w-24 bg-[#d5a63c]" />
 
               <div
                 className="mt-8 overflow-hidden rounded-[2rem] bg-slate-50 sm:mt-10"
                 onMouseEnter={() => setPaused(true)}
                 onMouseLeave={() => setPaused(false)}
               >
-                <div className="relative flex h-[420px] items-center justify-center sm:h-[560px] lg:h-[620px]">
-                  <img
-                    key={current.image}
-                    src={current.image}
-                    alt={current.title}
-                    className="h-[88%] w-auto max-w-[70%] rounded-md object-contain shadow-lg"
-                  />
+                {/* Preview Area */}
+                <div className="relative flex h-[420px] items-center justify-center overflow-hidden bg-slate-100 sm:h-[560px] lg:h-[620px]">
+
+                  <AnimatePresence mode="wait">
+                    {current.pdf ? (
+                      <motion.div
+                        key={current.pdf}
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.3 }}
+                        className="absolute inset-0 p-3 sm:p-5"
+                      >
+                        <iframe
+                          src={current.pdf}
+                          title={current.title}
+                          className="h-full w-full rounded-lg border-0 bg-white"
+                        />
+                      </motion.div>
+                    ) : (
+                      <motion.img
+                        key={current.image}
+                        src={current.image}
+                        alt={current.title}
+                        initial={{ opacity: 0, scale: 0.97 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.97 }}
+                        transition={{ duration: 0.3 }}
+                        className="h-[88%] max-w-[70%] rounded-md object-contain shadow-lg"
+                      />
+                    )}
+                  </AnimatePresence>
+
+                  {/* Slide Counter */}
+                  <div className="absolute left-4 top-4 z-10 rounded-full bg-slate-900/80 px-3 py-2 text-xs font-bold text-white sm:left-6">
+                    {index + 1} / {total}
+                  </div>
 
                   {/* Dots */}
-                  <div className="absolute right-4 top-6 flex items-center gap-2.5 rounded-full bg-slate-500/80 px-4 py-2 sm:right-6">
-                    {certifications.map((item, i) => (
+                  <div className="absolute right-4 top-4 z-10 flex items-center gap-2 rounded-full bg-slate-900/80 px-3 py-2 sm:right-6">
+                    {homeCertifications.map((item, i) => (
                       <button
-                        key={item.title}
+                        key={item.pdf || item.image}
+                        type="button"
                         onClick={() => setIndex(i)}
                         aria-label={`Show certificate ${i + 1}`}
-                        className={`h-3 w-3 rounded-full transition ${
-                          i === index ? "bg-[#d5a63c]" : "bg-white/90 hover:bg-white"
-                        }`}
+                        className={`h-3 w-3 rounded-full transition ${i === index
+                          ? "bg-[#d5a63c]"
+                          : "bg-white/80 hover:bg-white"
+                          }`}
                       />
                     ))}
                   </div>
 
-                  {/* Arrows */}
+                  {/* Previous Button */}
                   <button
+                    type="button"
                     onClick={prev}
                     aria-label="Previous certificate"
-                    className="absolute left-3 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-[#14246b] text-white shadow-lg transition hover:bg-[#1c3190] sm:left-5 sm:h-14 sm:w-14"
+                    className="absolute left-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[#14246b] text-white shadow-lg transition hover:bg-[#1c3190] sm:left-5 sm:h-14 sm:w-14"
                   >
                     <ChevronLeft size={26} />
                   </button>
+
+                  {/* Next Button */}
                   <button
+                    type="button"
                     onClick={next}
                     aria-label="Next certificate"
-                    className="absolute right-3 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-[#14246b] text-white shadow-lg transition hover:bg-[#1c3190] sm:right-5 sm:h-14 sm:w-14"
+                    className="absolute right-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[#14246b] text-white shadow-lg transition hover:bg-[#1c3190] sm:right-5 sm:h-14 sm:w-14"
                   >
                     <ChevronRight size={26} />
                   </button>
                 </div>
 
-                {/* Caption bar */}
-                <div className="bg-[#14295f] px-6 py-5 text-center">
-                  <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#d5a63c] sm:text-base">
+                {/* Caption */}
+                <div className="bg-[#14295f] px-5 py-6 text-center sm:px-6">
+                  <p className="text-xs font-bold uppercase leading-relaxed tracking-[0.12em] text-[#d5a63c] sm:text-sm">
                     {current.authority}
                   </p>
-                  <h3 className="mt-1 text-xl font-bold text-white sm:text-2xl">{current.title}</h3>
+
+                  <h3 className="mt-2 text-xl font-bold text-white sm:text-2xl">
+                    {current.title}
+                  </h3>
+
+                  {/* Open PDF */}
+                  {current.pdf && (
+                    <a
+                      href={current.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-2 rounded-full bg-amber-400 px-5 py-2.5 text-sm font-bold text-slate-950 transition hover:bg-amber-300"
+                    >
+                      View Full PDF
+                      <ArrowRight size={16} />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
 
-            {/* RIGHT: Request A Quote */}
+            {/* RIGHT: Request a Quote */}
             <div className="rounded-[2rem] bg-white p-6 shadow-xl sm:p-10 lg:mt-12">
               <h2 className="text-3xl font-extrabold text-[#0f1f4d] sm:text-5xl">
                 Request <span className="text-[#14246b]">A Quote</span>
               </h2>
 
-              <form onSubmit={handleSubmit} className="mt-8 space-y-4 sm:mt-10 sm:space-y-5">
-                <input className={pillField} name="name" placeholder="Your Name" aria-label="Your Name" required />
-                <input className={pillField} type="email" name="email" placeholder="Email" aria-label="Email" required />
-                <input className={pillField} type="tel" name="mobile" placeholder="Mobile" aria-label="Mobile" required />
-                <select className={pillField} name="service" aria-label="Looking for?" defaultValue="" required>
+              {/* <form
+                onSubmit={handleSubmit}
+                className="mt-8 space-y-4 sm:mt-10 sm:space-y-5"
+              >
+                <input
+                  className={pillField}
+                  name="name"
+                  placeholder="Your Name"
+                  aria-label="Your Name"
+                  required
+                />
+                <textarea
+                  className={textareaField}
+                  name="message"
+                  rows={4}
+                  placeholder="Your Message"
+                  aria-label="Your Message"
+                  required
+                />
+
+                <input
+                  className={pillField}
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  aria-label="Email"
+                  required
+                />
+
+                <input
+                  className={pillField}
+                  type="tel"
+                  name="mobile"
+                  placeholder="Mobile"
+                  aria-label="Mobile"
+                  required
+                />
+
+                <select
+                  className={pillField}
+                  name="service"
+                  aria-label="Looking for?"
+                  defaultValue=""
+                  required
+                >
                   <option value="" disabled>
                     Looking for?
                   </option>
+
                   {serviceOptions.map((service) => (
                     <option key={service} value={service}>
                       {service}
                     </option>
                   ))}
                 </select>
-                <input className={pillField} name="location" placeholder="Your Location" aria-label="Your Location" required />
 
+                <input
+                  className={pillField}
+                  name="location"
+                  placeholder="Your Location"
+                  aria-label="Your Location"
+                  required
+                />
                 <button
                   type="submit"
-                  className="mt-2 flex w-full items-center justify-center gap-3 rounded-full bg-[#0f1f4d] px-8 py-5 text-lg font-extrabold uppercase tracking-wide text-white transition hover:bg-[#14246b] sm:py-6 sm:text-xl"
+                  disabled={loading}
+                  className="mt-2 flex w-full items-center justify-center gap-3 rounded-full bg-[#0f1f4d] px-8 py-5 text-lg font-extrabold uppercase tracking-wide text-white transition hover:bg-[#14246b] disabled:cursor-not-allowed disabled:opacity-60 sm:py-6 sm:text-xl"
                 >
-                  Send Message <ArrowRight size={22} />
+                  {loading ? "Sending..." : "Send Message"}
+                  {!loading && <ArrowRight size={22} />}
                 </button>
-                {submitted && (
-                  <p className="text-sm text-amber-700">
-                    The form UI is ready; connect your backend/API to submit enquiries.
+
+                {status.text && (
+                  <p
+                    className={`text-sm font-semibold ${status.type === "success" ? "text-green-700" : "text-red-600"
+                      }`}
+                  >
+                    {status.text}
                   </p>
                 )}
-              </form>
+              </form> */}
+
+
+
+              <form
+  onSubmit={handleSubmit}
+  className="mt-8 space-y-4 sm:mt-10 sm:space-y-5"
+>
+  <input
+    className={pillField}
+    name="name"
+    placeholder="Your Name"
+    aria-label="Your Name"
+    required
+  />
+
+  <input
+    className={pillField}
+    type="email"
+    name="email"
+    placeholder="Email"
+    aria-label="Email"
+    required
+  />
+
+  <input
+    className={pillField}
+    type="tel"
+    name="mobile"
+    placeholder="Mobile"
+    aria-label="Mobile"
+    required
+  />
+
+  <select
+    className={pillField}
+    name="service"
+    aria-label="Looking for?"
+    defaultValue=""
+    required
+  >
+    <option value="" disabled>
+      Looking for?
+    </option>
+
+    {serviceOptions.map((service) => (
+      <option key={service} value={service}>
+        {service}
+      </option>
+    ))}
+  </select>
+
+  <input
+    className={pillField}
+    name="location"
+    placeholder="Your Location"
+    aria-label="Your Location"
+    required
+  />
+
+  <textarea
+    className={textareaField}
+    name="message"
+    rows={4}
+    placeholder="Your Message"
+    aria-label="Your Message"
+    required
+  />
+
+  <button
+    type="submit"
+    disabled={loading}
+    className="mt-2 flex w-full items-center justify-center gap-3 rounded-full bg-[#0f1f4d] px-8 py-5 text-lg font-extrabold uppercase tracking-wide text-white transition hover:bg-[#14246b] disabled:cursor-not-allowed disabled:opacity-60 sm:py-6 sm:text-xl"
+  >
+    {loading ? "Sending..." : "Send Message"}
+    {!loading && <ArrowRight size={22} />}
+  </button>
+
+  {status.text && (
+    <p
+      className={`text-sm font-semibold ${
+        status.type === "success" ? "text-green-700" : "text-red-600"
+      }`}
+    >
+      {status.text}
+    </p>
+  )}
+</form>
             </div>
+
           </div>
         </div>
       </div>
     </section>
   );
 }
+
 
 /* =========================
    ABOUT PAGE
@@ -1561,11 +1845,10 @@ export default function About() {
               return (
                 <Reveal key={faq.question} delay={index * 0.04}>
                   <div
-                    className={`overflow-hidden rounded-2xl border bg-white transition-all duration-300 ${
-                      isOpen
-                        ? "border-blue-200 shadow-[0_18px_45px_rgba(37,99,235,0.14)]"
-                        : "border-white/80 shadow-[0_8px_25px_rgba(15,23,42,0.06)]"
-                    }`}
+                    className={`overflow-hidden rounded-2xl border bg-white transition-all duration-300 ${isOpen
+                      ? "border-blue-200 shadow-[0_18px_45px_rgba(37,99,235,0.14)]"
+                      : "border-white/80 shadow-[0_8px_25px_rgba(15,23,42,0.06)]"
+                      }`}
                   >
                     <button
                       type="button"
@@ -1578,11 +1861,10 @@ export default function About() {
                       </span>
 
                       <span
-                        className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl transition-all duration-300 ${
-                          isOpen
-                            ? "rotate-45 bg-blue-700 text-white"
-                            : "bg-blue-50 text-blue-700"
-                        }`}
+                        className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl transition-all duration-300 ${isOpen
+                          ? "rotate-45 bg-blue-700 text-white"
+                          : "bg-blue-50 text-blue-700"
+                          }`}
                       >
                         <span className="text-2xl font-light leading-none">
                           +
