@@ -138,7 +138,8 @@ const Navbar = () => {
               className="flex items-center gap-2 transition hover:text-amber-400"
             >
               <Phone size={14} />
-        +91 92053 00460
+        {/* +91 92053 00460 */}
+        +91 88001 74283
             </a>
 
             <a

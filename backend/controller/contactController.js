@@ -70,7 +70,8 @@ export const sendContactEmail = async (req, res) => {
 
     const { error } = await resend.emails.send({
       from: "JIS Security <onboarding@resend.dev>",
-      to: [process.env.RECEIVER_EMAIL],
+      // to: [process.env.RECEIVER_EMAIL],
+           to: process.env.RECEIVER_EMAIL.split(",").map((e) => e.trim()),
       replyTo: email,
       subject: `New Service Enquiry - ${service}`,
       html: `
