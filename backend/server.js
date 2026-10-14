@@ -40,8 +40,10 @@ app.use(
       "http://localhost:5173",
       "http://localhost:5174",
       "http://localhost:5175",
-      "https://jis-security.vercel.app"
-      
+      "https://jis-security.vercel.app",
+      'https://www.jissecurity.in',
+      'https://jissecurity.in',
+
       // "https://jis-security.onrender.com/api/contact"
     ],
     credentials: true,
