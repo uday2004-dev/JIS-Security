@@ -903,7 +903,7 @@ const Footer = () => {
       <div className="border-t border-white/10 bg-[#0b1220]">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-5 text-center text-xs text-slate-400 sm:px-8 md:flex-row lg:px-10">
           <p>
-            © {new Date().getFullYear()} P.T.P.G.S. All Rights Reserved.
+            © {new Date().getFullYear()} JIS Security All Rights Reserved.
           </p>
 
           <Link

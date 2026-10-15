@@ -17,9 +17,9 @@ const contactDetails = [
     icon: Phone,
     title: "Call Us",
     description: "Speak directly with our team",
-    value: "+91-92053 00460",
+    value: "+91 88001 74283",
     secondaryValue: "8700104667",
-    href: "tel:+9192053 00460",
+    href: "+91 88001 74283",
   },
   {
     icon: Mail,
